@@ -133,3 +133,16 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+###added mannually###
+
+AUTH_USER_MODEL = 'userauths.User'
+
+# SESSION_COOKIE_AGE = 86400
+# CART_ID ='cart'
+# COUPON_ID = 'coupon'
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'userauths.backends.EmailAuthenticationBackend',
+]
