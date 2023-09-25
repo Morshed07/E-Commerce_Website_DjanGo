@@ -60,7 +60,7 @@ class Product(models.Model):
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null= True, related_name="products")
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null= True)
 
-    title = models.CharField(max_length=250, default='produt name')
+    title = models.CharField(max_length=250, default='product name')
     slug= models.SlugField(unique=True, max_length=250)
     image = models.ImageField(upload_to='product_images')
     description = models.TextField(blank=True, null= True, default="product descrption.....")
@@ -73,6 +73,8 @@ class Product(models.Model):
     status = models.BooleanField(default=True)
     in_stock = models.BooleanField(default=True)
     featured = models.BooleanField(default=False)
+    top_rated = models.BooleanField (default=False)
+    on_sale = models.BooleanField(default=False)
     digital = models.BooleanField(default=False)
 
     creatd_at = models.DateTimeField(auto_now_add=True)

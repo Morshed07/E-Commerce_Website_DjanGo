@@ -8,7 +8,7 @@ from .models import *
 
 class ProductAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug": ('title',)}
-    list_display = ['user','title','product_image','price', 'featured', 'product_status']
+    list_display = ['user','title','product_image','price', 'featured', 'product_status','top_rated', 'on_sale']
 
 class CategoryAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug": ('title',)}
