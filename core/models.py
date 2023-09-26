@@ -165,3 +165,18 @@ class Address(models.Model):
 
     class Meta:
         verbose_name_plural = 'Addresses'
+
+class Banner(models.Model):
+    banner_img  = models.ImageField(upload_to='top_banner_img')
+    brand_name = models.CharField(max_length=100)
+    brand_title = models.CharField(max_length=100)
+    brand_category_message = models.CharField(max_length=100)
+    active = models.BooleanField(default=True)
+    created_date = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name_plural = 'Banners'
+        ordering = ['-created_date']
+    
+    def banner_image(self):
+        return mark_safe('<img src="/media/%s" width = "70" height = "50" />' % (self.banner_img))

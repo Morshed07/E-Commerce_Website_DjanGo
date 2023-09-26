@@ -6992,7 +6992,7 @@ body.open-overlay #overlay{
 }
 .slider-opt04__layout01 .media{
     z-index: 10;
-    background-image: url('../images/home-04/main_slide.jpg');
+    /* background-image: url('../images/home-04/top_banner.png'); */
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -9521,7 +9521,8 @@ li.slick-current .slider-opt04__layout01 .buttons .btn{
     text-align: center;
 }
 .biolife-cat-box-item .cat-thumb img{
-    width: 100%;
+    width: 150px;
+    height: 100px;
     display: block;
 }
 .biolife-cat-box-item .cat-info{
