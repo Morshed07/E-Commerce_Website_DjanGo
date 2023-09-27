@@ -155,8 +155,8 @@ class Wishlist(models.Model):
     class Meta:
         verbose_name_plural = 'Wishlists'
         
-        def __str__(self) -> str:
-            return self.product.title
+    def __str__(self) -> str:
+        return self.product.title
 
 class Address(models.Model):
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null= True)
@@ -167,8 +167,9 @@ class Address(models.Model):
         verbose_name_plural = 'Addresses'
 
 class Banner(models.Model):
-    banner_img  = models.ImageField(upload_to='top_banner_img')
     brand_name = models.CharField(max_length=100)
+    banner_img  = models.ImageField(upload_to='top_banner_img')
+    
     brand_title = models.CharField(max_length=100)
     brand_category_message = models.CharField(max_length=100)
     active = models.BooleanField(default=True)
@@ -177,6 +178,12 @@ class Banner(models.Model):
     class Meta:
         verbose_name_plural = 'Banners'
         ordering = ['-created_date']
-    
+
     def banner_image(self):
-        return mark_safe('<img src="/media/%s" width = "70" height = "50" />' % (self.banner_img))
+        return mark_safe('<img src="/media/%s" width = "50" height = "50" />' % (self.banner_img))
+    
+    def __str__(self) -> str:
+        return self.brand_name
+
+
+    

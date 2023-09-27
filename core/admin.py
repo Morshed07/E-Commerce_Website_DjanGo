@@ -5,7 +5,7 @@ from .models import *
 #Register your models here.
 
 class BannerAdmin(admin.ModelAdmin):
-    list_display = ['banner_img','brand_name','active']
+    list_display = ['brand_name','banner_img','active']
 
 class ProductAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug": ('title',)}
