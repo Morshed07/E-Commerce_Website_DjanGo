@@ -4,8 +4,8 @@ from .models import *
 
 #Register your models here.
 
-class BannerAdmin(admin.ModelAdmin):
-    list_display = ['brand_name','banner_img','active']
+
+
 
 class ProductAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug": ('title',)}
@@ -31,6 +31,9 @@ class WishlistAdmin(admin.ModelAdmin):
 class AddressAdmin(admin.ModelAdmin):
     list_display = ['user','address','status']
 
+class BannerAdmin(admin.ModelAdmin):
+    list_display = ['image','brand_name','active']
+
 
 admin.site.register(Product,ProductAdmin)
 admin.site.register(Category,CategoryAdmin)
@@ -40,4 +43,5 @@ admin.site.register(ProductReview,ProductReviewAdmin)
 admin.site.register(Wishlist,WishlistAdmin)
 admin.site.register(Address,AddressAdmin)
 admin.site.register(Banner,BannerAdmin)
+
 

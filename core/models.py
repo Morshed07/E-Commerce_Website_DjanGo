@@ -168,7 +168,7 @@ class Address(models.Model):
 
 class Banner(models.Model):
     brand_name = models.CharField(max_length=100)
-    banner_img  = models.ImageField(upload_to='top_banner_img')
+    image  = models.ImageField(upload_to='top_banner_img')
     
     brand_title = models.CharField(max_length=100)
     brand_category_message = models.CharField(max_length=100)
@@ -180,10 +180,14 @@ class Banner(models.Model):
         ordering = ['-created_date']
 
     def banner_image(self):
-        return mark_safe('<img src="/media/%s" width = "50" height = "50" />' % (self.banner_img))
+        return mark_safe('<img src="/media/%s" width = "200" height = "100" />' % (self.image))
     
     def __str__(self) -> str:
         return self.brand_name
+    
+class Vendor(models.Model):
+    name = models.CharField(max_length=100)
+    image = models.ImageField(upload_to='vendor image gallery')
 
 
     
