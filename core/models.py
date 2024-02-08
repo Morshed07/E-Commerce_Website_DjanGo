@@ -168,7 +168,7 @@ class Address(models.Model):
 
 class Banner(models.Model):
     brand_name = models.CharField(max_length=100)
-    image  = models.ImageField(upload_to='top_banner_img')
+    image  = models.ImageField(upload_to='top_banner')
     
     brand_title = models.CharField(max_length=100)
     brand_category_message = models.CharField(max_length=100)
